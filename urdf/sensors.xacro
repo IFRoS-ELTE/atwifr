@@ -1,0 +1,19 @@
+<robot name="scout_v2_atwifr"
+    xmlns:xacro="http://ros.org/wiki/xacro">
+    
+    <!--Camera -->
+    <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
+
+    <xacro:sensor_d435 name="camera" topics_ns="camera" parent="base_link" publish_pointcloud="true">
+        <origin xyz="0.4 0 0.1" rpy="0 0 0"/>
+    </xacro:sensor_d435>
+
+    <!-- VELODYNE -->
+
+    <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+    <xacro:VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" organize_cloud="false" hz="10" samples="440" gpu="true">
+        <origin xyz="0 0 0.1" rpy="0 0 0" />
+    </xacro:VLP-16>
+    
+
+</robot>
