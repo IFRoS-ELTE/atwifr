@@ -29,7 +29,7 @@ rosdep install --from-paths src --ignore-src -r -y
 To run the simulation:
 
 ```
-roslaunch atwifr scout_ifros_world.launch
+roslaunch atwifr_gazebo scout_ifros_world.launch
 ```
 To teleoperate:
 ```

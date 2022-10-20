@@ -6,7 +6,7 @@
     <arg name="world_name" default="$(find scout_gazebo_sim)worlds/weston_robot_empty.world"/>
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <arg name="world_name" value="$(find atwifr)/worlds/ifros.world"/>
+        <arg name="world_name" value="$(find atwifr_gazebo)/worlds/ifros.world"/>
         <arg name="paused" value="false"/>
         <arg name="use_sim_time" value="true"/>
         <arg name="gui" value="true"/>
@@ -14,7 +14,7 @@
         <arg name="debug" value="false"/>
     </include>
     
-    <include file="$(find atwifr)/launch/spawn_scout_v2.launch"></include>
+    <include file="$(find atwifr_gazebo)/launch/spawn_scout_v2.launch"></include>
         
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find atwifr)/rviz/navigation.rviz" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find atwifr_gazebo)/rviz/navigation.rviz" />
 </launch>

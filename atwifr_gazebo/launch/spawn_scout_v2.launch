@@ -16,7 +16,7 @@
 
     <include file="$(find scout_description)/launch/scout_v2_stock.launch">
         <arg name="robot_namespace" value="$(arg robot_namespace)" />
-        <arg name="urdf_extras" value="$(find atwifr)/urdf/sensors.xacro" />
+        <arg name="urdf_extras" value="$(find atwifr_gazebo)/urdf/sensors.xacro" />
     </include>
 
     <node name="spawn_scout_model" pkg="gazebo_ros" type="spawn_model" args="-x $(arg x)
