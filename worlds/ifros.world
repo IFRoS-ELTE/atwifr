@@ -495,10 +495,10 @@
       <pose>23 25 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>1199 883000000</sim_time>
-      <real_time>150 617354272</real_time>
-      <wall_time>1665403105 325453083</wall_time>
-      <iterations>149843</iterations>
+      <sim_time>0</sim_time>
+      <real_time>0</real_time>
+      <wall_time>0</wall_time>
+      <iterations>0</iterations>
       <model name='House 1'>
         <pose>-2.40435 26 0 0 -0 0</pose>
         <scale>1 1 1</scale>
