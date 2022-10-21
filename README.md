@@ -5,6 +5,11 @@ Enrique and Seva Watering Robot
 ```
 pip install "kiss-icp"
 ```
-If fail, follow the Readme, and try to update pip etc: https://github.com/PRBonn/kiss-icp
+If fail, follow the Readme, and try to update pip etc: https://github.com/PRBonn/kiss-icp <br/>
 
+To run the two packages together:
+```
+roslaunch atwifr_gazebo launch_with_icp.launch
+```
+This would work only if you followed full installation for both packages.
 
