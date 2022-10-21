@@ -72,7 +72,7 @@
     </light>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>4.28025 14.2095 128.33 0 1.4978 0.12</pose>
+        <pose>17.2987 -13.985 134.648 0 1.4978 0.12</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -529,151 +529,151 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Tree_1'>
-        <pose>42.6812 22.0899 0 0 -0 0</pose>
+      <model name='Tree_1_10'>
+        <pose>40.6986 3.57464 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='Tree_1'>
-          <pose>42.6812 22.0899 0 0 -0 0</pose>
+          <pose>40.6986 3.57464 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Tree_1_0'>
-        <pose>40.9449 3.54506 0 0 -0 0</pose>
+      <model name='Tree_1_11'>
+        <pose>32.1775 6.32658 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='Tree_1_0'>
-          <pose>40.9449 3.54506 0 0 -0 0</pose>
+        <link name='Tree_1'>
+          <pose>32.1775 6.32658 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Tree_1_1'>
-        <pose>9.9752 17.7956 0 0 -0 0</pose>
+      <model name='Tree_1_12'>
+        <pose>9.93674 17.8501 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='Tree_1_1'>
-          <pose>9.9752 17.7956 0 0 -0 0</pose>
+        <link name='Tree_1'>
+          <pose>9.93674 17.8501 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Tree_1_2'>
-        <pose>-6.10272 5.37185 0 0 -0 0</pose>
+      <model name='Tree_1_13'>
+        <pose>17.9868 14.1267 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='Tree_1_2'>
-          <pose>-6.10272 5.37185 0 0 -0 0</pose>
+        <link name='Tree_1'>
+          <pose>17.9868 14.1267 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Tree_1_3'>
-        <pose>17.1013 4.18455 0 0 -0 0</pose>
+      <model name='Tree_1_14'>
+        <pose>17.2808 4.17984 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='Tree_1_3'>
-          <pose>17.1013 4.18455 0 0 -0 0</pose>
+        <link name='Tree_1'>
+          <pose>17.2808 4.17984 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Tree_1_4'>
-        <pose>18.197 14.0515 0 0 -0 0</pose>
+      <model name='Tree_1_15'>
+        <pose>2.98342 10.4964 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='Tree_1_4'>
-          <pose>18.197 14.0515 0 0 -0 0</pose>
+        <link name='Tree_1'>
+          <pose>2.98342 10.4964 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Tree_1_5'>
-        <pose>3.21582 10.3967 0 0 -0 0</pose>
+      <model name='Tree_1_16'>
+        <pose>-6.22423 5.37896 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='Tree_1_5'>
-          <pose>3.21582 10.3967 0 0 -0 0</pose>
+        <link name='Tree_1'>
+          <pose>-6.22423 5.37896 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Tree_1_6'>
-        <pose>32.3576 6.46863 0 0 -0 0</pose>
+      <model name='Tree_1_8'>
+        <pose>22.7811 35.3934 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='Tree_1_6'>
-          <pose>32.3576 6.46863 0 0 -0 0</pose>
+        <link name='Tree_1'>
+          <pose>22.7811 35.3934 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Tree_1_7'>
-        <pose>22.6676 35.3726 0 0 -0 0</pose>
+      <model name='Tree_1_9'>
+        <pose>42.5076 21.849 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='Tree_1_7'>
-          <pose>22.6676 35.3726 0 0 -0 0</pose>
+        <link name='Tree_1'>
+          <pose>42.5076 21.849 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Tree_2'>
-        <pose>40.6698 32.6874 0 0 -0 0</pose>
+      <model name='Tree_2_10'>
+        <pose>40.7836 32.7363 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='Tree_2'>
-          <pose>40.6698 32.6874 0 0 -0 0</pose>
+          <pose>40.7836 32.7363 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Tree_2_0'>
-        <pose>37.838 13.3191 0 0 -0 0</pose>
+      <model name='Tree_2_5'>
+        <pose>3.50354 3.12848 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='Tree_2_0'>
-          <pose>37.838 13.3191 0 0 -0 0</pose>
+        <link name='Tree_2'>
+          <pose>3.50354 3.12848 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Tree_2_1'>
-        <pose>3.67311 3.08777 0 0 -0 0</pose>
+      <model name='Tree_2_6'>
+        <pose>-5.27092 14.7021 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='Tree_2_1'>
-          <pose>3.67311 3.08777 0 0 -0 0</pose>
+        <link name='Tree_2'>
+          <pose>-5.27092 14.7021 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Tree_2_2'>
-        <pose>32.8137 28.8504 0 0 -0 0</pose>
+      <model name='Tree_2_7'>
+        <pose>-3.76264 35.8451 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='Tree_2_2'>
-          <pose>32.8137 28.8504 0 0 -0 0</pose>
+        <link name='Tree_2'>
+          <pose>-3.76264 35.8451 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Tree_2_3'>
-        <pose>-5.27984 14.6904 0 0 -0 0</pose>
+      <model name='Tree_2_8'>
+        <pose>37.8821 13.2727 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='Tree_2_3'>
-          <pose>-5.27984 14.6904 0 0 -0 0</pose>
+        <link name='Tree_2'>
+          <pose>37.8821 13.2727 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Tree_2_4'>
-        <pose>-3.72335 35.8168 0 0 -0 0</pose>
+      <model name='Tree_2_9'>
+        <pose>32.8293 28.8439 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='Tree_2_4'>
-          <pose>-3.72335 35.8168 0 0 -0 0</pose>
+        <link name='Tree_2'>
+          <pose>32.8293 28.8439 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -1430,9 +1430,9 @@
       </link>
       <static>1</static>
     </model>
-    <model name='Tree_2'>
+    <model name='Tree_2_5'>
       <static>1</static>
-      <pose>40.6698 32.6874 0 0 -0 0</pose>
+      <pose>5.90415 1.35942 0 0 -0 0</pose>
       <link name='Tree_2'>
         <visual name='Tree_2v'>
           <geometry>
@@ -1466,9 +1466,9 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='Tree_2_0'>
+    <model name='Tree_2_6'>
       <static>1</static>
-      <pose>37.838 13.3191 0 0 -0 0</pose>
+      <pose>-5.27092 14.7021 0 0 -0 0</pose>
       <link name='Tree_2'>
         <visual name='Tree_2v'>
           <geometry>
@@ -1502,18 +1502,162 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='Tree_1'>
+    <model name='Tree_2_7'>
       <static>1</static>
-      <pose>42.6812 22.0899 0 0 -0 0</pose>
+      <pose>-3.76264 35.8451 0 0 -0 0</pose>
+      <link name='Tree_2'>
+        <visual name='Tree_2v'>
+          <geometry>
+            <mesh>
+              <uri>model://Tree_2/Tree_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='Tree_2c'>
+          <geometry>
+            <mesh>
+              <uri>model://Tree_2/Tree_2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='Tree_2_8'>
+      <static>1</static>
+      <pose>37.8821 13.2727 0 0 -0 0</pose>
+      <link name='Tree_2'>
+        <visual name='Tree_2v'>
+          <geometry>
+            <mesh>
+              <uri>model://Tree_2/Tree_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='Tree_2c'>
+          <geometry>
+            <mesh>
+              <uri>model://Tree_2/Tree_2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='Tree_2_9'>
+      <static>1</static>
+      <pose>32.8293 28.8439 0 0 -0 0</pose>
+      <link name='Tree_2'>
+        <visual name='Tree_2v'>
+          <geometry>
+            <mesh>
+              <uri>model://Tree_2/Tree_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='Tree_2c'>
+          <geometry>
+            <mesh>
+              <uri>model://Tree_2/Tree_2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='Tree_2_10'>
+      <static>1</static>
+      <pose>40.7836 32.7363 0 0 -0 0</pose>
+      <link name='Tree_2'>
+        <visual name='Tree_2v'>
+          <geometry>
+            <mesh>
+              <uri>model://Tree_2/Tree_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='Tree_2c'>
+          <geometry>
+            <mesh>
+              <uri>model://Tree_2/Tree_2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='Tree_1_8'>
+      <static>1</static>
+      <pose>22.7811 35.3934 0 0 -0 0</pose>
       <link name='Tree_1'>
-        <visual name='Tree_1'>
+        <visual name='Tree_1v'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
             </mesh>
           </geometry>
         </visual>
-        <collision name='Tree_1'>
+        <collision name='Tree_1c'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
@@ -1538,18 +1682,18 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='Tree_1_0'>
+    <model name='Tree_1_9'>
       <static>1</static>
-      <pose>40.9449 3.54506 0 0 -0 0</pose>
-      <link name='Tree_1_0'>
-        <visual name='Tree_1_0'>
+      <pose>42.5076 21.849 0 0 -0 0</pose>
+      <link name='Tree_1'>
+        <visual name='Tree_1v'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
             </mesh>
           </geometry>
         </visual>
-        <collision name='Tree_1_0'>
+        <collision name='Tree_1c'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
@@ -1574,18 +1718,18 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='Tree_1_1'>
+    <model name='Tree_1_10'>
       <static>1</static>
-      <pose>9.9752 17.7956 0 0 -0 0</pose>
-      <link name='Tree_1_1'>
-        <visual name='Tree_1_1'>
+      <pose>40.6986 3.57464 0 0 -0 0</pose>
+      <link name='Tree_1'>
+        <visual name='Tree_1v'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
             </mesh>
           </geometry>
         </visual>
-        <collision name='Tree_1_1'>
+        <collision name='Tree_1c'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
@@ -1610,18 +1754,18 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='Tree_1_2'>
+    <model name='Tree_1_11'>
       <static>1</static>
-      <pose>-6.10272 5.37185 0 0 -0 0</pose>
-      <link name='Tree_1_2'>
-        <visual name='Tree_1_2'>
+      <pose>32.1775 6.32658 0 0 -0 0</pose>
+      <link name='Tree_1'>
+        <visual name='Tree_1v'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
             </mesh>
           </geometry>
         </visual>
-        <collision name='Tree_1_2'>
+        <collision name='Tree_1c'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
@@ -1646,18 +1790,18 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='Tree_1_3'>
+    <model name='Tree_1_12'>
       <static>1</static>
-      <pose>17.1013 4.18455 0 0 -0 0</pose>
-      <link name='Tree_1_3'>
-        <visual name='Tree_1_3'>
+      <pose>9.93674 17.8501 0 0 -0 0</pose>
+      <link name='Tree_1'>
+        <visual name='Tree_1v'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
             </mesh>
           </geometry>
         </visual>
-        <collision name='Tree_1_3'>
+        <collision name='Tree_1c'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
@@ -1682,126 +1826,18 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='Tree_2_1'>
+    <model name='Tree_1_13'>
       <static>1</static>
-      <pose>3.67311 3.08777 0 0 -0 0</pose>
-      <link name='Tree_2_1'>
-        <visual name='Tree_2_1'>
-          <geometry>
-            <mesh>
-              <uri>model://Tree_2/Tree_2.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='Tree_2_1'>
-          <geometry>
-            <mesh>
-              <uri>model://Tree_2/Tree_2.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-    <model name='Tree_2_2'>
-      <static>1</static>
-      <pose>32.8137 28.8504 0 0 -0 0</pose>
-      <link name='Tree_2_2'>
-        <visual name='Tree_2_2'>
-          <geometry>
-            <mesh>
-              <uri>model://Tree_2/Tree_2.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='Tree_2_2'>
-          <geometry>
-            <mesh>
-              <uri>model://Tree_2/Tree_2.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-    <model name='Tree_2_3'>
-      <static>1</static>
-      <pose>-5.27984 14.6904 0 0 -0 0</pose>
-      <link name='Tree_2_3'>
-        <visual name='Tree_2_3'>
-          <geometry>
-            <mesh>
-              <uri>model://Tree_2/Tree_2.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='Tree_2_3'>
-          <geometry>
-            <mesh>
-              <uri>model://Tree_2/Tree_2.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-    <model name='Tree_1_4'>
-      <static>1</static>
-      <pose>18.197 14.0515 0 0 -0 0</pose>
-      <link name='Tree_1_4'>
-        <visual name='Tree_1_4'>
+      <pose>17.9868 14.1267 0 0 -0 0</pose>
+      <link name='Tree_1'>
+        <visual name='Tree_1v'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
             </mesh>
           </geometry>
         </visual>
-        <collision name='Tree_1_4'>
+        <collision name='Tree_1c'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
@@ -1826,18 +1862,18 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='Tree_1_5'>
+    <model name='Tree_1_14'>
       <static>1</static>
-      <pose>3.21582 10.3967 0 0 -0 0</pose>
-      <link name='Tree_1_5'>
-        <visual name='Tree_1_5'>
+      <pose>17.2808 4.17984 0 0 -0 0</pose>
+      <link name='Tree_1'>
+        <visual name='Tree_1v'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
             </mesh>
           </geometry>
         </visual>
-        <collision name='Tree_1_5'>
+        <collision name='Tree_1c'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
@@ -1862,18 +1898,18 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='Tree_1_6'>
+    <model name='Tree_1_15'>
       <static>1</static>
-      <pose>32.3576 6.46863 0 0 -0 0</pose>
-      <link name='Tree_1_6'>
-        <visual name='Tree_1_6'>
+      <pose>2.98342 10.4964 0 0 -0 0</pose>
+      <link name='Tree_1'>
+        <visual name='Tree_1v'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
             </mesh>
           </geometry>
         </visual>
-        <collision name='Tree_1_6'>
+        <collision name='Tree_1c'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
@@ -1898,57 +1934,21 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='Tree_1_7'>
+    <model name='Tree_1_16'>
       <static>1</static>
-      <pose>22.6676 35.3726 0 0 -0 0</pose>
-      <link name='Tree_1_7'>
-        <visual name='Tree_1_7'>
+      <pose>-6.22423 5.37896 0 0 -0 0</pose>
+      <link name='Tree_1'>
+        <visual name='Tree_1v'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
             </mesh>
           </geometry>
         </visual>
-        <collision name='Tree_1_7'>
+        <collision name='Tree_1c'>
           <geometry>
             <mesh>
               <uri>model://Tree_1/Tree_1.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-    <model name='Tree_2_4'>
-      <static>1</static>
-      <pose>-3.72335 35.8168 0 0 -0 0</pose>
-      <link name='Tree_2'>
-        <visual name='Tree_2'>
-          <geometry>
-            <mesh>
-              <uri>model://Tree_2/Tree_2.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='Tree_2'>
-          <geometry>
-            <mesh>
-              <uri>model://Tree_2/Tree_2.dae</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
