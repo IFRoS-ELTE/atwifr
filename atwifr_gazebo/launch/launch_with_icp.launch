@@ -2,5 +2,6 @@
     <include file="$(find atwifr_gazebo)/launch/scout_ifros_world.launch">
         <arg name="rviz_conf" value="$(find kiss_icp)/rviz/icp.rviz"/>
     </include>
-    <node pkg="kiss_icp" type="kiss_icp_node.py" name="kiss_icp_node" ns="kiss_icp" output="screen"/>
+    <include file="$(find kiss_icp)/launch/run_icp.launch">
+    </include>
 </launch>
