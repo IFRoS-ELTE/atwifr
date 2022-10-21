@@ -5,7 +5,7 @@
     <arg name="z" default="0.0"/>
     <arg name="yaw" default="0.0"/>
 
-    <arg name="robot_namespace" default=""/>
+    <arg name="robot_namespace" default="/"/>
 
     <!-- these are the arguments you can pass this launch file, for example paused:=true -->
     <arg name="paused" default="true" />
@@ -26,7 +26,7 @@
               -unpause
               -urdf
               -param robot_description
-              -model 'scout$(arg robot_namespace)'" />
+              -model 'scout'" />
 
     <!-- Load joint controller configurations from YAML file to parameter server -->
     <rosparam file="$(find atwifr_gazebo)/config/scout_v2_control.yaml" command="load"/>
