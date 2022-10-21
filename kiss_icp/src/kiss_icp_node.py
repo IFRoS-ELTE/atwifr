@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # python libs
 from pathlib import Path
@@ -55,7 +55,7 @@ class KissIcpOdometry:
 
         self.pub = rospy.Publisher('~estimated_pose', PoseStamped, queue_size=1)
         self.points_pub = rospy.Publisher( 'velodyne_pcl', PointCloud2, queue_size=1)
-        self.points_sub = rospy.Subscriber('/velodyne_points', PointCloud2, self.points_callback, queue_size=10)
+        self.points_sub = rospy.Subscriber('/points_in', PointCloud2, self.points_callback, queue_size=10)
         
         self.br = tf.TransformBroadcaster()
 
