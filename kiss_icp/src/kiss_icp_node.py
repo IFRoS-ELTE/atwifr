@@ -23,10 +23,6 @@ import tf
 rospack = rospkg.RosPack()
 pkg_path = rospack.get_path('kiss_icp')
 
-# Class to fit node to the existing kiss_icp.odometry.Odometry class
-class FakeData:
-    def __init__(self, max_range=100):
-        self.max_range = max_range
 
 # Main class
 class KissIcpOdometry:
@@ -35,9 +31,8 @@ class KissIcpOdometry:
             config = Path(str(pkg_path) + "/config/default.yaml")
         else:
             config = Path(config)
+
         self.config: KISSConfig = load_config(config)
-        data = FakeData(100)
-        self.config.data = data  # TODO(Nacho): Fix this config mess
 
         self.odometry = Odometry(config=self.config, deskew=deskew)
         self.times = []
@@ -57,7 +52,7 @@ class KissIcpOdometry:
         in_frame, source = self.odometry.register_frame(frame, timestamps)
         self.times.append(time.perf_counter_ns() - start_time)
         self.publish_pose(self.poses[-1])
-        msg.header.frame_id = "base_link_estimate"
+        msg.header.frame_id = "velodyne_estimate"
         msg.header.stamp = rospy.Time.now()
         self.points_pub.publish(msg)
 
@@ -81,7 +76,7 @@ class KissIcpOdometry:
         self.br.sendTransform((t[0], t[1], t[2]),
                         R_q,
                         rospy.Time.now(),
-                        "base_link_estimate",
+                        "velodyne_estimate",
                         "world")
  
 if __name__ == '__main__':
