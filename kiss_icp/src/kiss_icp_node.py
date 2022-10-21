@@ -32,7 +32,7 @@ class FakeData:
 class KissIcpOdometry:
     def __init__(self, deskew: bool = False, config: str = None):
         if config is None:
-            config = Path(str(pkg_path) + "/conf/default.yaml")
+            config = Path(str(pkg_path) + "/config/default.yaml")
         else:
             config = Path(config)
         self.config: KISSConfig = load_config(config)
@@ -52,8 +52,6 @@ class KissIcpOdometry:
 
     def points_callback(self, msg: PointCloud2):
         frame = ros_numpy.point_cloud2.pointcloud2_to_xyz_array(msg)
-        print()
-    
         timestamps = np.zeros(frame.shape[0])
         start_time = time.perf_counter_ns()
         in_frame, source = self.odometry.register_frame(frame, timestamps)

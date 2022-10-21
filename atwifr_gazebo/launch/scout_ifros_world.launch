@@ -1,9 +1,5 @@
 <launch>
-
-    <arg name="robot_namespace" default="/"/>
-
-    <!-- Load the surrounding environment into Gazebo -->
-    <arg name="world_name" default="$(find scout_gazebo_sim)worlds/weston_robot_empty.world"/>
+    <arg name="rviz_conf" default="$(find atwifr_gazebo)/rviz/navigation.rviz"/>
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="world_name" value="$(find atwifr_gazebo)/worlds/ifros.world"/>
@@ -16,5 +12,5 @@
     
     <include file="$(find atwifr_gazebo)/launch/spawn_scout_v2.launch"></include>
         
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find atwifr_gazebo)/rviz/navigation.rviz" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_conf)" />
 </launch>
