@@ -17,7 +17,7 @@
 
     <!-- TRYING TO PUBLISH ROBOT ABSOLUTE POSITION - NOT WORKING -->
 
-    <gazebo>
+    <!-- <gazebo>
         <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
             <alwaysOn>true</alwaysOn>
             <updateRate>50.0</updateRate>
@@ -28,7 +28,7 @@
             <xyzOffsets>0 0 0</xyzOffsets>
             <rpyOffsets>0 0 0</rpyOffsets>
         </plugin>
-    </gazebo>
+    </gazebo> -->
     
 
 </robot>
