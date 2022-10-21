@@ -21,24 +21,39 @@ from sensor_msgs.msg import PointCloud2
 import tf
 
 rospack = rospkg.RosPack()
-pkg_path = rospack.get_path('kiss_icp')
+pkg_path = Path(rospack.get_path('kiss_icp'))
 
 
 # Main class
 class KissIcpOdometry:
-    def __init__(self, deskew: bool = False, config: str = None):
+    def __init__(self, config: str = None):
+        
+        # read config
         if config is None:
-            config = Path(str(pkg_path) + "/config/default.yaml")
+            config = Path(pkg_path, "config", "default.yaml") # default config
         else:
-            config = Path(config)
-
+            config = Path(config) # passed in object
+        config = rospy.get_param("~config", config) # passed as ros parameter (highest priority)
         self.config: KISSConfig = load_config(config)
-
+        # define default value for parameters, added to config manually (originally wasn't there)
+        deskew = False
+        if hasattr(self.config, "deskew"):
+            deskew = self.config.deskew
+        
+        # define used objects
         self.odometry = Odometry(config=self.config, deskew=deskew)
         self.times = []
         self.poses = self.odometry.poses
 
-        self.pub = rospy.Publisher('estimated_pose', PoseStamped, queue_size=1)
+        # define frames and pubs, subs
+        self.frame_id_estimate = "velodyne_estimate"
+        self.frame_id_global = "world"
+        if hasattr(self.config, "frames") and hasattr(self.config.frames, "estimate"):
+            self.frame_id_estimate = self.config.frames.estimate
+        if hasattr(self.config, "frames") and hasattr(self.config.frames, "global_frame"):
+            self.frame_id_global = self.config.frames.global_frame
+
+        self.pub = rospy.Publisher('~estimated_pose', PoseStamped, queue_size=1)
         self.points_pub = rospy.Publisher( 'velodyne_pcl', PointCloud2, queue_size=1)
         self.points_sub = rospy.Subscriber('/velodyne_points', PointCloud2, self.points_callback, queue_size=10)
         
@@ -52,7 +67,7 @@ class KissIcpOdometry:
         in_frame, source = self.odometry.register_frame(frame, timestamps)
         self.times.append(time.perf_counter_ns() - start_time)
         self.publish_pose(self.poses[-1])
-        msg.header.frame_id = "velodyne_estimate"
+        msg.header.frame_id = self.frame_id_estimate
         msg.header.stamp = rospy.Time.now()
         self.points_pub.publish(msg)
 
@@ -62,7 +77,7 @@ class KissIcpOdometry:
         R_q = R.as_quat()
         t = pose[:3, 3]
         p = PoseStamped()
-        p.header.frame_id = "world"
+        p.header.frame_id = self.frame_id_global
         p.header.stamp = rospy.Time.now()
         p.pose.position.x = t[0]
         p.pose.position.y = t[1]
@@ -76,13 +91,10 @@ class KissIcpOdometry:
         self.br.sendTransform((t[0], t[1], t[2]),
                         R_q,
                         rospy.Time.now(),
-                        "velodyne_estimate",
-                        "world")
+                        self.frame_id_estimate,
+                        self.frame_id_global)
  
 if __name__ == '__main__':
-    try:
-        rospy.init_node('kiss_icp', anonymous=True)
-        odometry = KissIcpOdometry(deskew=False)
-        rospy.spin()     
-    except rospy.ROSInterruptException:
-        pass
+    rospy.init_node('kiss_icp')
+    odometry = KissIcpOdometry()
+    rospy.spin()

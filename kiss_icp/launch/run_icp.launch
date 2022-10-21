@@ -1,4 +1,6 @@
 <launch>
+        <arg name="config" default="$(find kiss_icp)/config/default.yaml"/>
         <node pkg="kiss_icp" type="kiss_icp_node.py" name="kiss_icp_node" ns="kiss_icp" output="screen">
+                <param name="config" type="string" value="$(arg config)"/>
         </node>
 </launch>
