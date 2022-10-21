@@ -46,8 +46,8 @@ class KissIcpOdometry:
         self.poses = self.odometry.poses
 
         # define frames and pubs, subs
-        self.frame_id_estimate = "velodyne_estimate"
-        self.frame_id_global = "world"
+        self.frame_id_estimate = "base_link"
+        self.frame_id_global = "odom"
         if hasattr(self.config, "frames") and hasattr(self.config.frames, "estimate"):
             self.frame_id_estimate = self.config.frames.estimate
         if hasattr(self.config, "frames") and hasattr(self.config.frames, "global_frame"):

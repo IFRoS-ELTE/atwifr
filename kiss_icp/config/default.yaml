@@ -17,6 +17,6 @@ adaptive_threshold:
   min_motion_th: 0.1
 
 frames: # added by Seva, wasn't here originally
-  global_frame: "world"
-  estimate: "velodyne_estimate"
+  global_frame: "odom"
+  estimate: "base_link"
 

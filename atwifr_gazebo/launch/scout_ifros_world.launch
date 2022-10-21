@@ -1,4 +1,6 @@
 <launch>
+    <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 30" />
+    
     <arg name="rviz_conf" default="$(find atwifr_gazebo)/rviz/navigation.rviz"/>
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
