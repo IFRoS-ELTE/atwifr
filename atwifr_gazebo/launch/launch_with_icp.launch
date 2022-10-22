@@ -1,6 +1,6 @@
 <launch>
     <include file="$(find atwifr_gazebo)/launch/scout_ifros_world.launch">
-        <arg name="rviz_conf" value="$(find kiss_icp)/rviz/icp.rviz"/>
+        <arg name="rviz_conf" value="$(find atwifr_gazebo)/rviz/navigation_icp.rviz"/>
     </include>
     <include file="$(find kiss_icp)/launch/run_icp.launch">
     </include>
