@@ -4,4 +4,6 @@
     </include>
     <include file="$(find kiss_icp)/launch/run_icp.launch">
     </include>
+    <include file="$(find atwifr_gazebo)/launch/octomap.launch">
+    </include>
 </launch>
