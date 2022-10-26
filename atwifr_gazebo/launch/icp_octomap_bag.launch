@@ -1,0 +1,11 @@
+<launch>
+    <arg name="rviz_conf" default="$(find atwifr_gazebo)/rviz/mapping.rviz"/>
+    <arg name="bagfile" default="$(find kiss_icp)/bag/data.bag"/>
+
+    <node pkg="tf" type="static_transform_publisher" name="velodyne_tf" args="0 0 0.138 0 0 0 base_link velodyne 100" /> 
+    <node pkg="rosbag" type="play" name="player" output="log" args="--clock -s 10 $(arg bagfile)"/>
+
+    <include file="$(find atwifr_gazebo)/launch/icp_octomap.launch">
+        <arg name="rviz_conf" value="$(arg rviz_conf)"/>
+    </include>
+</launch>
