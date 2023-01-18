@@ -77,32 +77,40 @@ private:
 
   void status_cb(const actionlib_msgs::GoalStatusArray &msg)
   {
-    int time_diff = (msg.header.stamp - last_status).toSec();
-    if (time_diff < 5)
-      return;
-    last_status = msg.header.stamp;
+    // int time_diff = (msg.header.stamp - last_status).toSec();
+    // if (time_diff < 5)
+    //   return;
+    // last_status = msg.header.stamp;
+
+    // std::cout << status << std::endl;
 
     if(status == "initialized"){
+      std::cout << "initialized goal" << std::endl;
       bool result = send_goal(msg);
+      status = "following";
       return;
     }
 
-    if (msg.status_list.size() == 0)
-      bool result = send_goal(msg);
+    if (msg.status_list.size() == 0){
+      std::cout << " skipping" << std::endl;
+      // bool result = send_goal(msg);
       return;
+    }
 
-    if ((msg.status_list[0].status == 3) && (status == "following")){
+    if ((msg.status_list[0].status == 3) && (status == "following") ){
+      std::cout << " reached and sending next goal" << std::endl;
       status = "reached";
       points_solved_.erase(points_solved_.begin());
       bool result = send_goal(msg);
       return;
     }
     if ((msg.status_list[0].status != 3) && (status == "reached")){
+      std::cout << " sent next goal and following " << std::endl;
       status = "following";
       bool result = send_goal(msg);
       return;
     }
-    // bool result = send_goal(msg);
+    // std::cout << "hi " << status << std::endl;
     
   }
 
