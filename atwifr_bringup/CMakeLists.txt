@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  tf
 )
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -119,6 +120,11 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+
+add_executable(odom_from_tf src/odom_from_tf.cpp)
+target_link_libraries(odom_from_tf
+  ${catkin_LIBRARIES}
+)
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/atwifr_bringup.cpp

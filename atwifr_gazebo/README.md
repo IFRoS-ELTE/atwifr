@@ -11,6 +11,9 @@ And install dependencies for it:
 ```
 sudo apt install ros-noetic-ros-control ros-noetic-ros-controllers ros-noetic-gazebo-ros ros-noetic-gazebo-ros-control ros-noetic-joint-state-publisher-gui ros-noetic-teleop-twist-keyboard 
 ```
+
+Install gazebo repo with a tree model: https://github.com/tudelft/gazebo_models. Follow it's  README to add trees to your GAZEBO PATH. 
+
 Intel Realsense Packages:
 ```
 git clone https://github.com/issaiass/realsense2_description
