@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="velodyne_height_map" type="heightmap_node" name="heightmap_node">
+     <param name="height_threshold" value="0.25" />
+     <param name="cell_size" value="0.15" />
+     <!-- <remap from="velodyne_points" to="/passthrough/output" /> -->
+    </node>
+    <remap from="velodyne_points" to="/velodyne_points" />
+</launch>

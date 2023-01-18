@@ -1,0 +1,18 @@
+<launch>
+    <!-- <arg name="rviz_conf" default="$(find atwifr_gazebo)/rviz/navigation.rviz"/> -->
+    <arg name="world" default="$(find atwifr_gazebo)/worlds/ifros.world"/>
+    <arg name="use_sim_time" default="true"/>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(arg world)"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+    </include>
+    
+    <!-- <include file="$(find atwifr_gazebo)/launch/spawn_scout_v2.launch"></include> -->
+        
+    <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_conf)" /> -->
+</launch>

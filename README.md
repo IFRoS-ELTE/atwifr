@@ -17,3 +17,10 @@ roslaunch atwifr_gazebo launch_with_icp.launch
 This would work only if you followed full installation for both packages. <br/>
 To learn about each package usage, follow their README file.
 
+# TODO
+
+1) Complete navigation as the whole package.
+2) Implement path following to a posinion on the known map
+3) Implement a node that will wait for a goal_reached feedback and follow to the next point
+4) Add velocity to the kiss_icp node
+

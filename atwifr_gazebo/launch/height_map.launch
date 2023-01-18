@@ -1,6 +1,0 @@
-<launch>
-    <node pkg="velodyne_height_map" type="heightmap_node" name="heightmap_node">
-     <param name="height_threshold" value="0.25" />
-     <remap from="velodyne_points" to="/kiss_icp/kiss_icp_node/velodyne_pcl" />
-    </node>
-</launch>

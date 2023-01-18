@@ -1,0 +1,4 @@
+<launch>
+    <arg name="rviz_conf" default="$(find atwifr_bringup)/rviz/navigation.rviz"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_conf)" />
+</launch>

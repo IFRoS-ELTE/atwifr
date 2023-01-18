@@ -1,0 +1,20 @@
+<launch>
+    <remap from="/map" to="/projected_map"/>
+    <!-- <remap from="/map" to="/trav_map"/> -->
+    <!-- <remap from="/move_base_simple/goal" to="/move_base/goal"/> -->
+    <!-- <remap from="/cmd_vel" to="/COSTAR_HUSKY/cmd_vel"/> -->
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+        <rosparam file="$(find atwifr_bringup)/param/4wd/costmap_common_params.yaml" command="load" ns="global_costmap" />
+
+        <rosparam file="$(find atwifr_bringup)/param/4wd/costmap_common_params.yaml" command="load" ns="local_costmap" />
+
+        <rosparam file="$(find atwifr_bringup)/param/4wd/local_costmap_params.yaml" command="load" />
+
+        <rosparam file="$(find atwifr_bringup)/param/4wd/global_costmap_params.yaml" command="load" />
+
+        <rosparam file="$(find atwifr_bringup)/param/4wd/base_local_planner_params.yaml" command="load" />
+
+        <rosparam file="$(find atwifr_bringup)/param/4wd/move_base_params.yaml" command="load" />
+    </node>
+  
+</launch>

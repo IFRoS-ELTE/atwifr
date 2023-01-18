@@ -1,0 +1,1 @@
+rosbag record /tf /tf_static /velodyne_points /clock
