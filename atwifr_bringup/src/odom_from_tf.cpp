@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
 
 	ros::init(argc, argv, "odom_gt_publisher");
 	ros::NodeHandle n;
-	ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom_gt", 10);
+	ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 10);
 	tf2_ros::Buffer tf_buffer_;
     tf2_ros::TransformListener transformListener_(tf_buffer_);
 
@@ -56,7 +56,7 @@ int main(int argc, char** argv) {
         timeStamp.fromSec(0.0);
         try
         {
-            transformTf = tf_buffer_.lookupTransform("odom", "base_footprint", timeStamp, ros::Duration(5.0));
+            transformTf = tf_buffer_.lookupTransform("odom", "base_link", timeStamp, ros::Duration(5.0));
         }
         catch (tf::TransformException &ex)
         {
@@ -142,7 +142,7 @@ int main(int argc, char** argv) {
 		nav_msgs::Odometry odom;
 		odom.header.stamp = current_time;
 		odom.header.frame_id = "odom";
-		odom.child_frame_id = "base_footprint";
+		odom.child_frame_id = "base_link";
 
 		// position
 		odom.pose.pose.position.x = x_coord;

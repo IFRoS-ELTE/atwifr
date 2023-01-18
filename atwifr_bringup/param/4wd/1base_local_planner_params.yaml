@@ -26,7 +26,7 @@ DWAPlannerROS:
   prune_plan: false
 # Goal Tolerance Parameters
   xy_goal_tolerance: 0.25 #0.25
-  yaw_goal_tolerance: 3.14 #0.1
+  yaw_goal_tolerance: 0.2 #0.1
   latch_xy_goal_tolerance: false
 
   trans_stopped_vel: 0.1
@@ -69,7 +69,7 @@ TrajectoryPlannerROS:
   escape_vel: -0.1
 
   # Goal Tolerance Parameters
-  yaw_goal_tolerance: 3.14
+  yaw_goal_tolerance: 0.1
   xy_goal_tolerance: 0.2
   latch_xy_goal_tolerance: false
 

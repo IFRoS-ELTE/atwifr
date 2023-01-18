@@ -13,13 +13,13 @@
         <arg name="file" value="spawn_scout_v2.launch" />
     </include>
 
-    <include file="$(find atwifr_gazebo)/launch/timed_roslaunch.launch">
+    <!-- <include file="$(find atwifr_gazebo)/launch/timed_roslaunch.launch">
         <arg name="time" value="4" />
         <arg name="pkg" value="atwifr_bringup" />
         <arg name="file" value="missing_transforms.launch" />
-    </include>
+    </include> -->
     
-    <!-- <node pkg="timed_roslaunch" type="timed_roslaunch.sh" args="$(arg time) $(arg pkg) $(arg file) $(arg value)" name="$(arg node_name)" /> -->
+    <node pkg="atwifr_bringup" type="odom_to_tf" name="odom_to_tf" />
 
     <!-- <include file="$(find atwifr_gazebo)/launch/spawn_scout_v2.launch" ></include> -->
         

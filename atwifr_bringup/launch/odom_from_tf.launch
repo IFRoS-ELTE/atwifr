@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="atwifr_bringup" type="odom_from_tf" name="odom_from_tf_node">
+     <!-- <param name="height_threshold" value="0.25" />
+     <param name="cell_size" value="0.15" /> -->
+     <!-- <remap from="velodyne_points" to="/passthrough/output" /> -->
+    </node>
+    <!-- <remap from="velodyne_points" to="/velodyne_points" /> -->
+</launch>

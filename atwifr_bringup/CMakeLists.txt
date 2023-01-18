@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.0.2)
 project(atwifr_bringup)
 
+set(use_SYSTEM_BOOST TRUE)
+
+
+
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
 
@@ -13,6 +17,10 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   tf
 )
+
+find_package(Boost 1.45.0 COMPONENTS graph) 
+
+    include_directories(${Boost_INCLUDE_DIRS}) 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -125,6 +133,14 @@ add_executable(odom_from_tf src/odom_from_tf.cpp)
 target_link_libraries(odom_from_tf
   ${catkin_LIBRARIES}
 )
+
+add_executable(odom_to_tf src/odom_to_tf.cpp)
+target_link_libraries(odom_to_tf
+  ${catkin_LIBRARIES}
+)
+
+add_executable(tsp src/tsp.cpp) 
+target_link_libraries(tsp ${Boost_LIBRARIES} ${catkin_LIBRARIES})
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/atwifr_bringup.cpp

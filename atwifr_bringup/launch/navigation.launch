@@ -1,5 +1,6 @@
 <launch>
     <remap from="/map" to="/projected_map"/>
+    <remap from="/odom" to="/ground_truth/state"/>
     <!-- <remap from="/map" to="/trav_map"/> -->
     <!-- <remap from="/move_base_simple/goal" to="/move_base/goal"/> -->
     <!-- <remap from="/cmd_vel" to="/COSTAR_HUSKY/cmd_vel"/> -->

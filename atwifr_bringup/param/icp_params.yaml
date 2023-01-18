@@ -22,6 +22,6 @@ publish_odom_tf: True # if publish a tf to the estimation frame
 frames: 
   global_frame: "odom"          # name of the frame where the robot was first
   sensor_frame: "velodyne"      # real sensor frame
-  estimation_frame: "base_footprint" # the frame which pose is estimated
+  estimation_frame: "base_link" # the frame which pose is estimated
 
 
