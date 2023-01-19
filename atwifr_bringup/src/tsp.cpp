@@ -59,8 +59,9 @@ private:
 
   ros::Publisher pub_;
   ros::Subscriber sub_;
-    ros::Publisher pub_path_;
-    ros::Publisher pub_frontier_;
+  ros::Publisher pub_path_;
+  ros::Publisher pub_path_orig_;
+  ros::Publisher pub_frontier_;
 
   ros::Time last_status;
 
@@ -80,6 +81,7 @@ private:
     // Create a ROS publisher for the output point cloud
     pub_ = nodeHandle_.advertise<geometry_msgs::PoseStamped>(new_goal_topic, 1);
     pub_path_ = nodeHandle_.advertise<nav_msgs::Path>("tsp_path", 1);
+    pub_path_orig_ = nodeHandle_.advertise<nav_msgs::Path>("orig_path", 1);
     pub_frontier_ = nodeHandle_.advertise<sensor_msgs::PointCloud2>("all_points", 1);
     service = nodeHandle_.advertiseService("plan_tsp", &TSPsolver::solve_tsp_callback, this);
 
@@ -159,7 +161,7 @@ private:
         return true;
     }
 
-    bool publish_path(std::vector<pairf>& path_in)
+    bool publish_path(std::vector<pairf>& path_in, ros::Publisher pub)
     {
         if (path_in.size() > 0)
         {
@@ -194,7 +196,7 @@ private:
             path.poses = poses;
 
             // // Publish the data
-            pub_path_.publish(path);
+            pub.publish(path);
         }
         return true;
     }
@@ -235,10 +237,11 @@ private:
   bool solve_tsp_callback(std_srvs::Empty::Request &request, std_srvs::Empty::Response &response)
   {
     std::vector<pairf> points{
-        {8., 5.}, // these can be randomized
-        {11., 10.},
-        {7., 14.},
-        {2., 15.},
+        {14., 12.}, // these can be randomized
+        {10., 13.},
+        {14., 5.},
+        {5., 4.},
+        {6., 10.},
     };
     points_ = points;
     Graph graph;
@@ -289,7 +292,8 @@ private:
 
     sub_ = nodeHandle_.subscribe(status_topic, 1, &TSPsolver::status_cb, this);
     publish_pcl(points_);
-    publish_path(points);
+    publish_path(points_solved_, pub_path_);
+    publish_path(points_, pub_path_orig_);
     return true;
   }
 };
