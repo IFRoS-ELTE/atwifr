@@ -14,7 +14,7 @@ sudo apt install ros-noetic-ros-control ros-noetic-ros-controllers ros-noetic-ga
 
 Install gazebo repo with a tree model: https://github.com/tudelft/gazebo_models. Follow it's  README to add trees to your GAZEBO PATH. 
 
-Intel Realsense Packages:
+Intel Realsense Packages following README files:
 ```
 git clone https://github.com/issaiass/realsense2_description
 git clone https://github.com/issaiass/realsense_gazebo_plugin
@@ -26,13 +26,15 @@ Install packages dependencies:
 cd <your/ws/path>
 rosdep install --from-paths src --ignore-src -r -y
 ```
+And finally build everything using `catkin build` or `catkin_make`
 
 ## Usage
 
-To run the simulation:
+To run the simulation and spaw a robot:
 
 ```
-roslaunch atwifr_gazebo scout_ifros_world.launch
+roslaunch atwifr_gazebo world.launch
+roslaunch atwifr_gazebo spawn_scout_v2.launch
 ```
 To teleoperate:
 ```

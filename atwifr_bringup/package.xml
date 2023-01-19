@@ -63,6 +63,7 @@
   <depend>octomap_server</depend>
   <depend>tf2_ros</depend>
   <depend>tf</depend>
+  <depend>move_base</depend>
   
   
 

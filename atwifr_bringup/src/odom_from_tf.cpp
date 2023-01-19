@@ -37,7 +37,6 @@ int main(int argc, char** argv) {
 	current_time = ros::Time::now();
 	last_time = ros::Time::now();
 
-	// tf::TransformBroadcaster broadcaster;
 	ros::Rate loop_rate(20);
 
 	// const double degree = M_PI/180;
@@ -124,19 +123,6 @@ int main(int argc, char** argv) {
 			za = yaw;
 		}
 
-		// double delta_x = (vx * cos(th) - vy * sin(th)) * dt;
-		// double delta_y = (vx * sin(th) + vy * cos(th)) * dt;
-		// double delta_th = vth * dt;
-
-		// x += delta_x;
-		// y += delta_y;
-		// th += delta_th;
-
-		// geometry_msgs::Quaternion odom_quat;	
-		// odom_quat = tf::createQuaternionMsgFromRollPitchYaw(0,0,th);
-
-		// update transform
-		// odom_trans.transform.rotation = tf::createQuaternionMsgFromYaw(th);
 
 		//filling the odometry
 		nav_msgs::Odometry odom;
@@ -160,8 +146,6 @@ int main(int argc, char** argv) {
 
 		last_time = current_time;
 
-		// publishing the odometry and the new tf
-		// broadcaster.sendTransform(odom_trans);
 		odom_pub.publish(odom);
 
 		loop_rate.sleep();
