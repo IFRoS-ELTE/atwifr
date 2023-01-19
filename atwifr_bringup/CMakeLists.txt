@@ -16,6 +16,8 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   tf
+  pcl_ros
+  pcl_conversions
 )
 
 find_package(Boost 1.45.0 COMPONENTS graph) 

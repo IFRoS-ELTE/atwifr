@@ -11,6 +11,14 @@
 #include <boost/graph/graph_utility.hpp>
 #include <boost/graph/metric_tsp_approx.hpp>
 
+
+#include <sensor_msgs/PointCloud2.h>
+#include <pcl_conversions/pcl_conversions.h>
+#include <pcl/point_cloud.h>
+#include <pcl/point_types.h>
+
+#include <pcl/common/transforms.h>
+using PointCloudType = pcl::PointCloud<pcl::PointXYZI>;
 using Graph =
     boost::adjacency_list<boost::setS, boost::listS, boost::undirectedS,
                           boost::property<boost::vertex_index_t, int>,
@@ -18,6 +26,8 @@ using Graph =
                           boost::no_property>;
 
 using VertexDescriptor = Graph::vertex_descriptor;
+
+
 
 using pairf = std::pair<float, float>;
 
@@ -49,6 +59,8 @@ private:
 
   ros::Publisher pub_;
   ros::Subscriber sub_;
+    ros::Publisher pub_path_;
+    ros::Publisher pub_frontier_;
 
   ros::Time last_status;
 
@@ -67,7 +79,8 @@ private:
 
     // Create a ROS publisher for the output point cloud
     pub_ = nodeHandle_.advertise<geometry_msgs::PoseStamped>(new_goal_topic, 1);
-
+    pub_path_ = nodeHandle_.advertise<nav_msgs::Path>("tsp_path", 1);
+    pub_frontier_ = nodeHandle_.advertise<sensor_msgs::PointCloud2>("all_points", 1);
     service = nodeHandle_.advertiseService("plan_tsp", &TSPsolver::solve_tsp_callback, this);
 
     std::cout << "Node initialized" << std::endl;
@@ -114,40 +127,78 @@ private:
     
   }
 
-  // bool send_goal(const actionlib_msgs::GoalStatusArray &msg){
-  //   std::cout << "received callback" << std::endl;
-  //   if (points_solved_.size() == 0){
-  //     std::cout << "no points to lead. last one reached" << std::endl;
-  //     status = "initialized";
-  //     return false;
-  //   }
-  //   // if (status == "reached"){
-  //     std::cout << "sending the goal" << std::endl;
-  //     float x = points_solved_[0].first;
-  //     float y = points_solved_[0].second;
+  bool publish_pcl(std::vector<pairf> points)
+    {
+        PointCloudType::Ptr pointCloud(new PointCloudType);
+        pointCloud->header.frame_id = "odom";
+        pointCloud->header.stamp = ros::Time::now().toNSec() / 1000;
 
-  //     move_base_msgs::MoveBaseActionGoal goalMsg;
-  //     goalMsg.header.frame_id = "odom";
-  //     goalMsg.header.stamp=ros::Time::now();
-  //     goalMsg.header.seq=0;
-  //     goalMsg.goal_id.id = "tsp";
-  //     goalMsg.goal_id.stamp = ros::Time::now();
-  //     goalMsg.goal.target_pose.header = msg.header;
-  //     goalMsg.goal.target_pose.header.frame_id = "odom";
-  //     goalMsg.goal.target_pose.pose.position.x = x;
-  //     goalMsg.goal.target_pose.pose.position.y = y;
-  //     goalMsg.goal.target_pose.pose.position.z = 0;
-  //     goalMsg.goal.target_pose.pose.orientation.x = 0;
-  //     goalMsg.goal.target_pose.pose.orientation.y = 0;
-  //     goalMsg.goal.target_pose.pose.orientation.z = 0;
-  //     goalMsg.goal.target_pose.pose.orientation.w = 1;
-  //     // std::cout << "publishing "
-  //     pub_.publish(goalMsg);
-  //     // status = "following";
-  //   // }
-  //     // std::cout << "here" << std::endl;
-  //   return true;
-  // }
+        for (auto &pt : points)
+        {
+            pcl::PointXYZI p(1);
+            p.x = pt.first;
+            p.y = pt.second;
+            p.z = 0;
+            pointCloud->insert(pointCloud->end(), p);
+        }
+
+        publish_pcl(pointCloud, pub_frontier_);
+        return true;
+    }
+
+    bool publish_pcl(PointCloudType::Ptr pointCloud, ros::Publisher pub)
+    {
+
+        pcl::PCLPointCloud2 pcl_pc;
+        sensor_msgs::PointCloud2 output;
+        pcl::toPCLPointCloud2(*pointCloud, pcl_pc);
+        pcl_conversions::fromPCL(pcl_pc, output);
+
+        // Publish the data
+        pub.publish(output);
+        return true;
+    }
+
+    bool publish_path(std::vector<pairf>& path_in)
+    {
+        if (path_in.size() > 0)
+        {
+            nav_msgs::Path path;
+            path.header.frame_id = "odom";
+            path.header.stamp = ros::Time::now();
+
+            std::vector<geometry_msgs::PoseStamped> poses;
+            int seq = 0;
+            for (auto &xy_ind : path_in)
+            {
+                seq++;
+                pairf xy_coordinate = xy_ind;
+                geometry_msgs::PoseStamped *pose = new geometry_msgs::PoseStamped();
+                pose->header = path.header;
+                pose->header.seq = seq;
+                geometry_msgs::Pose posee;
+                geometry_msgs::Quaternion orientation;
+                orientation.w = 0;
+                orientation.x = 0;
+                orientation.y = 0;
+                orientation.z = 0;
+                posee.orientation = orientation;
+                geometry_msgs::Point point;
+                point.x = xy_coordinate.first;
+                point.y = xy_coordinate.second;
+                point.z = 0;
+                posee.position = point;
+                pose->pose = posee;
+                poses.push_back(*pose);
+            }
+            path.poses = poses;
+
+            // // Publish the data
+            pub_path_.publish(path);
+        }
+        return true;
+    }
+
   bool send_goal(const actionlib_msgs::GoalStatusArray &msg){
     std::cout << "received callback" << std::endl;
     if (points_solved_.size() == 0){
@@ -237,6 +288,8 @@ private:
     // status = "following";
 
     sub_ = nodeHandle_.subscribe(status_topic, 1, &TSPsolver::status_cb, this);
+    publish_pcl(points_);
+    publish_path(points);
     return true;
   }
 };
