@@ -1,5 +1,7 @@
 # ATWIFR - Automatic Tree Watering Intelligent Field Robot
-Enrique's and Seva's Tree inspection Robot.
+Seva's (on the left) and Enrique's (on the right) Tree Inspection Robot. <br/>
+![alt text](https://github.com/IFRoS-ELTE/atwifr/blob/main/media/Enrique_Seva.png?raw=true) <br/>
+The project is a final project for the [IFROS](https://ifrosmaster.org/) third semester's subject "IFRoS Lab" in ELTE University, Budapest.
 ## Dependencies
 - Follow [README](https://github.com/IFRoS-ELTE/atwifr/blob/main/atwifr_gazebo/README.md) from artwifr_gazebo to use robot in simulation;
 - Install [kiss_icp_ros](https://github.com/sevagul/kiss-icp-ros/blob/main/README.md) package for exploration and mapping:
@@ -76,3 +78,19 @@ Note, that for now inspection works best when simulation is launched with ground
 
 This module is not integrated with the ones above, and can be read, installed and used from the [following repository](https://github.com/enriquea52/Tree-SLAM)
 
+## Examples of Execution
+
+### Mapping/Navigation/Inspection
+In the next figure, you can see the inspection task in progress <br/>
+![alt text](https://github.com/IFRoS-ELTE/atwifr/blob/main/media/tsp.png?raw=true)<br/>
+The inspection points are marked with the red boxes, the tsp path in drawn with the dark line <br/>
+You can see a video of the inspection process [here](https://youtu.be/REcBNsOYybI)
+### Mapping/Navigation/Exploration/ICP
+In the following Figure you can see the explored map (on the left) and the exploration in progress (on the right): <br/>
+![alt text](https://github.com/IFRoS-ELTE/atwifr/blob/main/media/exploration.png?raw=true)<br/>
+The detected frontier is marked with the blue color <br/>
+And here is a [small demo video](https://youtu.be/jHadogrUxD4) <br/>
+KISS-ICP odometry was used to produce these results. <br/>
+You can also see the example of the pointclouds aligned by the kiss-icp in [kiss-icp-ros repository](https://github.com/sevagul/kiss-icp-ros)
+### TREE SLAM
+The examples of TREE SLAM execution can be seen in the [TREE SLAM repository](https://github.com/enriquea52/Tree-SLAM)
